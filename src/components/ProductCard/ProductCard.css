@@ -1,0 +1,17 @@
+.card-style {
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 5%;
+  border-radius: 6px;
+}
+.button-style {
+  background-color: rgb(238, 231, 231);
+  border: 2px gray;
+  border-radius: 25px;
+}
+.icon-style {
+  border-radius: 100px;
+}
+.button-add {
+  background-color: yellow;
+}
