@@ -1,4 +1,4 @@
-import { Card, Col, Dropdown, Rate, Row } from 'antd';
+import { Card, Col, Dropdown, Image, Rate, Row } from 'antd';
 import React from 'react';
 import './ProductInfo.css';
 
@@ -12,16 +12,16 @@ interface ProductInfoType {
   installment: number;
   period: string;
   quantity: number;
+  image: any;
 }
 
 const ProductInfoCard: React.FC<ProductInfoType> = (props) => {
-  const handleAddToCart = () => {
-    console.log('ssssssssssss');
-  };
   return (
     <Card>
       <Row>
-        <Col span={12}></Col>
+        <Col span={12}>
+          <Image width={300} height={300} src={props.image} />
+        </Col>
         <Col span={12}>
           <Row>
             <h1>{props.title}</h1>

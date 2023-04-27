@@ -5,6 +5,7 @@ import ProductInfoCard from './ProductInfoCard';
 const ProductInfo: React.FC = () => {
   const [productInfo, setProductInfo] = useState([]);
   const [installmentInfo, setInstallmentInfo] = useState([]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     getUiData().then((data) => setProductInfo(data.ecommerce.product));
@@ -12,11 +13,15 @@ const ProductInfo: React.FC = () => {
   useEffect(() => {
     getUiData().then((data) => setInstallmentInfo(data.ecommerce.product.installment));
   }, []);
+  useEffect(() => {
+    getUiData().then((data) => setImages(data.ecommerce.product.images[0]));
+  }, []);
   console.log(productInfo);
   console.log(installmentInfo);
   return (
     <div>
       <ProductInfoCard
+        image={images.image}
         title={productInfo.name}
         description={productInfo.description}
         rate={productInfo.rating}
